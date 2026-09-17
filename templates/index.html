@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Personality Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <h1>Customer Personality Analysis</h1>
+
+        <p>
+            Machine Learning Based Campaign Response Prediction
+        </p>
+
+    </header>
+
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+
+        <div class="card">
+
+            <h2>Customer Information</h2>
+
+            <p class="description">
+                Enter customer information to predict whether the
+                customer is likely to respond to the marketing campaign.
+            </p>
+
+
+            <!-- PREDICTION FORM -->
+
+            <form action="/predict" method="POST">
+
+                <div class="form-grid">
+
+
+                    <!-- YEAR OF BIRTH -->
+
+                    <div class="form-group">
+
+                        <label for="Year_Birth">
+                            Year of Birth
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Year_Birth"
+                            name="Year_Birth"
+                            placeholder="Example: 1970"
+                            required>
+
+                    </div>
+
+
+                    <!-- EDUCATION -->
+
+                    <div class="form-group">
+
+                        <label for="Education">
+                            Education
+                        </label>
+
+                        <select
+                            id="Education"
+                            name="Education"
+                            required>
+
+                            <option value="">
+                                Select Education
+                            </option>
+
+                            <option value="Basic">
+                                Basic
+                            </option>
+
+                            <option value="2n Cycle">
+                                2n Cycle
+                            </option>
+
+                            <option value="Graduation">
+                                Graduation
+                            </option>
+
+                            <option value="Master">
+                                Master
+                            </option>
+
+                            <option value="PhD">
+                                PhD
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MARITAL STATUS -->
+
+                    <div class="form-group">
+
+                        <label for="Marital_Status">
+                            Marital Status
+                        </label>
+
+                        <select
+                            id="Marital_Status"
+                            name="Marital_Status"
+                            required>
+
+                            <option value="">
+                                Select Status
+                            </option>
+
+                            <option value="Single">
+                                Single
+                            </option>
+
+                            <option value="Married">
+                                Married
+                            </option>
+
+                            <option value="Together">
+                                Together
+                            </option>
+
+                            <option value="Divorced">
+                                Divorced
+                            </option>
+
+                            <option value="Widow">
+                                Widow
+                            </option>
+
+                            <option value="Alone">
+                                Alone
+                            </option>
+
+                            <option value="Absurd">
+                                Absurd
+                            </option>
+
+                            <option value="YOLO">
+                                YOLO
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- INCOME -->
+
+                    <div class="form-group">
+
+                        <label for="Income">
+                            Income
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Income"
+                            name="Income"
+                            step="0.01"
+                            min="0"
+                            placeholder="Example: 50000"
+                            required>
+
+                    </div>
+
+
+                    <!-- KIDS -->
+
+                    <div class="form-group">
+
+                        <label for="Kidhome">
+                            Kids at Home
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Kidhome"
+                            name="Kidhome"
+                            min="0"
+                            placeholder="Example: 1"
+                            required>
+
+                    </div>
+
+
+                    <!-- TEENAGERS -->
+
+                    <div class="form-group">
+
+                        <label for="Teenhome">
+                            Teenagers at Home
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Teenhome"
+                            name="Teenhome"
+                            min="0"
+                            placeholder="Example: 1"
+                            required>
+
+                    </div>
+
+
+                    <!-- RECENCY -->
+
+                    <div class="form-group">
+
+                        <label for="Recency">
+                            Recency
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Recency"
+                            name="Recency"
+                            min="0"
+                            placeholder="Example: 20"
+                            required>
+
+                    </div>
+
+
+                    <!-- WINE -->
+
+                    <div class="form-group">
+
+                        <label for="MntWines">
+                            Wine Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MntWines"
+                            name="MntWines"
+                            min="0"
+                            placeholder="Example: 300"
+                            required>
+
+                    </div>
+
+
+                    <!-- FRUITS -->
+
+                    <div class="form-group">
+
+                        <label for="MntFruits">
+                            Fruit Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MntFruits"
+                            name="MntFruits"
+                            min="0"
+                            placeholder="Example: 50"
+                            required>
+
+                    </div>
+
+
+                    <!-- MEAT -->
+
+                    <div class="form-group">
+
+                        <label for="MntMeatProducts">
+                            Meat Products
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MntMeatProducts"
+                            name="MntMeatProducts"
+                            min="0"
+                            placeholder="Example: 200"
+                            required>
+
+                    </div>
+
+
+                    <!-- FISH -->
+
+                    <div class="form-group">
+
+                        <label for="MntFishProducts">
+                            Fish Products
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MntFishProducts"
+                            name="MntFishProducts"
+                            min="0"
+                            placeholder="Example: 50"
+                            required>
+
+                    </div>
+
+
+                    <!-- SWEET -->
+
+                    <div class="form-group">
+
+                        <label for="MntSweetProducts">
+                            Sweet Products
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MntSweetProducts"
+                            name="MntSweetProducts"
+                            min="0"
+                            placeholder="Example: 50"
+                            required>
+
+                    </div>
+
+
+                    <!-- GOLD -->
+
+                    <div class="form-group">
+
+                        <label for="MntGoldProds">
+                            Gold Product Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MntGoldProds"
+                            name="MntGoldProds"
+                            min="0"
+                            placeholder="Example: 30"
+                            required>
+
+                    </div>
+
+
+                    <!-- DEAL PURCHASES -->
+
+                    <div class="form-group">
+
+                        <label for="NumDealsPurchases">
+                            Deal Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="NumDealsPurchases"
+                            name="NumDealsPurchases"
+                            min="0"
+                            placeholder="Example: 2"
+                            required>
+
+                    </div>
+
+
+                    <!-- WEB PURCHASES -->
+
+                    <div class="form-group">
+
+                        <label for="NumWebPurchases">
+                            Web Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="NumWebPurchases"
+                            name="NumWebPurchases"
+                            min="0"
+                            placeholder="Example: 4"
+                            required>
+
+                    </div>
+
+
+                    <!-- CATALOG PURCHASES -->
+
+                    <div class="form-group">
+
+                        <label for="NumCatalogPurchases">
+                            Catalog Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="NumCatalogPurchases"
+                            name="NumCatalogPurchases"
+                            min="0"
+                            placeholder="Example: 3"
+                            required>
+
+                    </div>
+
+
+                    <!-- STORE PURCHASES -->
+
+                    <div class="form-group">
+
+                        <label for="NumStorePurchases">
+                            Store Purchases
+                        </label>
+
+                        <input
+                            type="number"
+                            id="NumStorePurchases"
+                            name="NumStorePurchases"
+                            min="0"
+                            placeholder="Example: 5"
+                            required>
+
+                    </div>
+
+
+                    <!-- WEB VISITS -->
+
+                    <div class="form-group">
+
+                        <label for="NumWebVisitsMonth">
+                            Web Visits per Month
+                        </label>
+
+                        <input
+                            type="number"
+                            id="NumWebVisitsMonth"
+                            name="NumWebVisitsMonth"
+                            min="0"
+                            placeholder="Example: 5"
+                            required>
+
+                    </div>
+
+
+                    <!-- CAMPAIGN 3 -->
+
+                    <div class="form-group">
+
+                        <label for="AcceptedCmp3">
+                            Accepted Campaign 3
+                        </label>
+
+                        <select
+                            id="AcceptedCmp3"
+                            name="AcceptedCmp3"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CAMPAIGN 4 -->
+
+                    <div class="form-group">
+
+                        <label for="AcceptedCmp4">
+                            Accepted Campaign 4
+                        </label>
+
+                        <select
+                            id="AcceptedCmp4"
+                            name="AcceptedCmp4"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CAMPAIGN 5 -->
+
+                    <div class="form-group">
+
+                        <label for="AcceptedCmp5">
+                            Accepted Campaign 5
+                        </label>
+
+                        <select
+                            id="AcceptedCmp5"
+                            name="AcceptedCmp5"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CAMPAIGN 1 -->
+
+                    <div class="form-group">
+
+                        <label for="AcceptedCmp1">
+                            Accepted Campaign 1
+                        </label>
+
+                        <select
+                            id="AcceptedCmp1"
+                            name="AcceptedCmp1"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CAMPAIGN 2 -->
+
+                    <div class="form-group">
+
+                        <label for="AcceptedCmp2">
+                            Accepted Campaign 2
+                        </label>
+
+                        <select
+                            id="AcceptedCmp2"
+                            name="AcceptedCmp2"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- COMPLAINT -->
+
+                    <div class="form-group">
+
+                        <label for="Complain">
+                            Previous Complaint
+                        </label>
+
+                        <select
+                            id="Complain"
+                            name="Complain"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREDICT BUTTON -->
+
+                <button
+                    type="submit"
+                    class="predict-btn">
+
+                    Predict Customer Response
+
+                </button>
+
+            </form>
+
+
+            <!-- ============================= -->
+            <!-- PREDICTION RESULT -->
+            <!-- ============================= -->
+
+            {% if prediction %}
+
+            <div class="result">
+
+                <h2>Prediction Result</h2>
+
+                <h3>
+                    {{ status }}
+                </h3>
+
+                <p>
+                    {{ prediction }}
+                </p>
+
+
+                {% if probability is not none %}
+
+                <p>
+
+                    <strong>
+                        Response Probability:
+                    </strong>
+
+                    {{ "%.2f"|format(probability) }}%
+
+                </p>
+
+                {% endif %}
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- ============================= -->
+            <!-- ERROR MESSAGE -->
+            <!-- ============================= -->
+
+            {% if error %}
+
+            <div class="error">
+
+                <h2>
+                    Prediction Error
+                </h2>
+
+                <p>
+                    {{ error }}
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Customer Personality Analysis
+            |
+            Machine Learning Project
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
