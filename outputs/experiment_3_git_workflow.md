@@ -83,4 +83,6 @@ Branch development: In progress
 
 Merge: Pending
 
-Rollback/Revert demonstration: Pending
+Rollback/Revert demonstration: Completed using Git restore on an uncommitted change.
+
+Version traceability: Completed.
