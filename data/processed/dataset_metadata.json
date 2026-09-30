@@ -1,0 +1,9 @@
+{
+    "dataset_name": "Customer Personality Analysis",
+    "file_name": "marketing_campaign.csv",
+    "rows": 2240,
+    "columns": 29,
+    "target_column": "Response",
+    "task": "Binary Classification",
+    "dataset_version": "1.0"
+}

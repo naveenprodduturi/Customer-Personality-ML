@@ -1,0 +1,62 @@
+{
+    "experiment": "Experiment 2",
+    "dataset": "Customer Personality Analysis",
+    "dataset_shape": [
+        2240,
+        29
+    ],
+    "test_size": 0.2,
+    "random_state": 42,
+    "models": {
+        "Logistic_Regression": {
+            "accuracy": 0.8839285714285714,
+            "precision": 0.7142857142857143,
+            "recall": 0.373134328358209,
+            "f1_score": 0.49019607843137253,
+            "confusion_matrix": [
+                [
+                    371,
+                    10
+                ],
+                [
+                    42,
+                    25
+                ]
+            ]
+        },
+        "Decision_Tree": {
+            "accuracy": 0.8169642857142857,
+            "precision": 0.38461538461538464,
+            "recall": 0.373134328358209,
+            "f1_score": 0.3787878787878788,
+            "confusion_matrix": [
+                [
+                    341,
+                    40
+                ],
+                [
+                    42,
+                    25
+                ]
+            ]
+        },
+        "Random_Forest": {
+            "accuracy": 0.8861607142857143,
+            "precision": 0.8076923076923077,
+            "recall": 0.31343283582089554,
+            "f1_score": 0.45161290322580644,
+            "confusion_matrix": [
+                [
+                    376,
+                    5
+                ],
+                [
+                    46,
+                    21
+                ]
+            ]
+        }
+    },
+    "best_model": "Logistic_Regression",
+    "model_version": "1.0"
+}
