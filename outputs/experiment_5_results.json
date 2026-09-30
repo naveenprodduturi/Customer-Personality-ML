@@ -1,0 +1,16 @@
+{
+    "experiment": 5,
+    "model": "Logistic Regression",
+    "method": "GridSearchCV",
+    "cv": 5,
+    "scoring": "f1",
+    "best_parameters": {
+        "classifier__C": 10,
+        "classifier__solver": "liblinear"
+    },
+    "best_cv_f1": 0.5142743130026026,
+    "test_accuracy": 0.8839285714285714,
+    "test_precision": 0.7142857142857143,
+    "test_recall": 0.373134328358209,
+    "test_f1": 0.49019607843137253
+}

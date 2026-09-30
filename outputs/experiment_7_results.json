@@ -1,0 +1,17 @@
+{
+    "experiment": 7,
+    "model": "Final Logistic Regression",
+    "hyperparameters": {
+        "C": 1,
+        "solver": "liblinear",
+        "max_iter": 1000,
+        "random_state": 42
+    },
+    "test_accuracy": 0.8839285714285714,
+    "test_precision": 0.7142857142857143,
+    "test_recall": 0.373134328358209,
+    "test_f1": 0.49019607843137253,
+    "unseen_prediction": "Unlikely to respond",
+    "unseen_prediction_class": 0,
+    "response_probability_percent": 15.788947485403728
+}

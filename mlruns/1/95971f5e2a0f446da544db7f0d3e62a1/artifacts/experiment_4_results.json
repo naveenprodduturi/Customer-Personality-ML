@@ -1,0 +1,13 @@
+{
+    "experiment": 4,
+    "model": "Logistic Regression",
+    "dataset": "data/raw/marketing_campaign.csv",
+    "training_samples": 1792,
+    "testing_samples": 448,
+    "test_size": 0.2,
+    "random_state": 42,
+    "accuracy": 0.8839285714285714,
+    "precision": 0.7142857142857143,
+    "recall": 0.373134328358209,
+    "f1_score": 0.49019607843137253
+}
